@@ -1,0 +1,17 @@
+
+GET http://localhost:3001/standgen
+
+###
+
+POST http://localhost:3001/standgen/new
+Content-Type: application/json
+
+{
+    "user": "Test User 3",
+    "personality": "Test Description 3"
+    
+}
+
+###
+
+DELETE http://localhost:3001/standgen/delete/64431d9a1b9fe9e569803137
