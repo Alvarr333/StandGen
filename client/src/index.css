@@ -1,13 +1,84 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Import the Open Sans font from Google Fonts */
+
+@import
+ url(
+'https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'
+);
+
+:root {
+  /* Primary colors */
+  --color-primary: #A55B4F;
+  --color-secondary: #BD8C6E;
+  --color-tertiary: #C6A27E;
+  --color-accent: #708F9F;
+  --color-accent2: #7F9FBD;
+  --color-accent3: #9FBDCC;
+  --color-accent4: #bcd4df;
+
+  /* Text colors */
+  --color-text: #333333;
+  --color-text-secondary: #647076;
+
+  /* Background colors */
+  --color-bg: #F2F2F2;
+  --color-bg-secondary: #d3e7e2f1;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
+
+body{
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin-top: 4vh;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 65vh;
+}
+
+h1{
+  font-size: 6vh;
+  color: var(--color-text);
+  font-weight: 400;
+  margin-bottom: 2vh;
+}
+
+h4{
+  font-size: 3vh;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+  margin-bottom: 2vh;
+}
+
+ul{
+  background: var(--color-bg-secondary);
+  padding: 3vh;
+  border-radius: 1vw;
+  margin-bottom: 2.5vh;
+  width: 85vw;
+}
+
+ul li{
+  color: var(--color-text-secondary);
+  margin: 1.5vh;
+}
+
+.standSummary{
+  transition: 0.5s;
+  cursor: pointer;
+  margin-bottom: 3vh;
+}
+.standSummary:hover{
+  transform: scale(1.03);
+  background-color: rgba(211, 234, 226, 0.7); 
+}
+
