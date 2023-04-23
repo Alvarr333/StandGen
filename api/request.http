@@ -8,10 +8,57 @@ Content-Type: application/json
 
 {
     "user": "Test User 3",
-    "personality": "Test Description 3"
+    "name": "Test Name 3",
+    "personality": "Test Description 3",
+    "standAbility": "Test Ability 3"
     
 }
 
 ###
 
 DELETE http://localhost:3001/standgen/delete/64431d9a1b9fe9e569803137
+
+###
+
+PUT http://localhost:3001/standgen/update/user/64431dbcb9007f4e42783980
+Content-Type: application/json
+
+{
+    "user": "Jotaro Kujo"
+}
+
+###
+
+PUT http://localhost:3001/standgen/update/name/64431dbcb9007f4e42783980
+Content-Type: application/json
+
+{
+    "name": "Star Platinum"
+}
+
+###
+
+PUT http://localhost:3001/standgen/update/personality/64431dbcb9007f4e42783980
+Content-Type: application/json
+
+{
+    "personality": "Misogonist"
+}
+
+###
+
+PUT http://localhost:3001/standgen/update/standAbility/64431dbcb9007f4e42783980
+Content-Type: application/json
+
+{
+    "standAbility": "oraoraoraoraora"
+}
+
+###
+
+PUT http://localhost:3001/standgen/update/appereance/64431dbcb9007f4e42783980
+Content-Type: application/json
+
+{
+    "appereance": "purple aztec-like humanoid mmmmmmmmmmmmmmmmmmm"
+}

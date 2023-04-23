@@ -25,7 +25,7 @@ app.post('/standgen/new', (req, res) => {
     const stand = new StandGen({
         user: req.body.user,
         personality: req.body.personality,
-        stand: req.body.stand,
+        name: req.body.stand,
         standAbility: req.body.standAbility
     });
 
@@ -39,14 +39,39 @@ app.delete('/standgen/delete/:id', async (req, res) => {
     res.json(result);
 });
 
-// app.put('/standgen/update/user/:id', async (req, res) => {
-//     const stand = await StandGen.findById(req.params.id);
-//     stand.user = req.body.user;
-//     stand.personality = req.body.personality;
-//     stand.stand = req.body.stand;
-//     stand.standAbility = req.body.standAbility;
-//     stand.save();
-//     res.json(stand);
-// });
+app.put('/standgen/update/user/:id', async (req, res) => {
+    const stand = await StandGen.findById(req.params.id);
+    stand.user = req.body.user;
+    stand.save();
+    res.json(stand);
+});
+
+app.put('/standgen/update/personality/:id', async (req, res) => {
+    const stand = await StandGen.findById(req.params.id);
+    stand.personality = req.body.personality;
+    stand.save();
+    res.json(stand);
+});
+
+app.put('/standgen/update/name/:id', async (req, res) => {
+    const stand = await StandGen.findById(req.params.id);
+    stand.name = req.body.name;
+    stand.save();
+    res.json(stand);
+});
+
+app.put('/standgen/update/appereance/:id', async (req, res) => {
+    const stand = await StandGen.findById(req.params.id);
+    stand.appereance = req.body.appereance;
+    stand.save();
+    res.json(stand);
+});
+
+app.put('/standgen/update/standAbility/:id', async (req, res) => {
+    const stand = await StandGen.findById(req.params.id);
+    stand.standAbility = req.body.standAbility;
+    stand.save();
+    res.json(stand);
+});
 
 app.listen(3001, () => console.log("Server running on port 3001"));

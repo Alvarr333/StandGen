@@ -10,19 +10,22 @@ const StandGenSchema = new Schema({
         type: String,
         required: true
     },
-    stand: {
+    name: {
         type: String,
-        required: false
+        default: "No stand"
+    },
+    appereance: {
+        type: String,
+        default: "No stand"
     },
     standAbility: {
         type: String,
-        required: false
+        default: "No stand"
     },
     timeCreated: {
         type: Date,
         default: Date.now()
     }
-
 });
 
 const StandGen = mongoose.model('StandGen', StandGenSchema);

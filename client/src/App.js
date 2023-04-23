@@ -1,4 +1,32 @@
+import{useState, useEffect} from 'react';
+
+const API_URL = "http://localhost:3001";
+
 function App() {
+	const [standList, setStandList] = useState([]);
+	const [popupActive, setPopupActive] = useState(false);
+	const [newStand, setNewStand] = useState("");
+
+	useEffect(() => {
+		GetStands();
+		console.log("Stand list: ", standList);
+	}, []);
+
+	const GetStands = () => {
+		fetch(API_URL + "/standgen")
+			.then((res) => res.json())
+			.then((data) => setStandList(data))
+			.catch((err) => console.log("Error: ", err));
+	};
+
+	const deleteStand = async(id) => {
+		const data = await fetch(API_URL + "/standgen/delete/" + id, {
+			method: "DELETE",
+		}).then((res) => res.json());
+
+		setStandList(standList.filter((stand) => stand._id !== id));
+	};
+
 	return (
 		<div className="App">
 			<h1>Stand Generator v1.0</h1>	
@@ -14,21 +42,17 @@ function App() {
 			</div>
 			
 			<h4>Stand list</h4>
-			<div className="stand-list">
+			<div className="standList">
+				{standList.map((stand) => (
 				<ul className="standSummary">
-				  <li className="standName">StandName1</li>
-					<li>User1</li>
-					<li>Personality1</li>
-					<li>Appereance1</li>
-					<li>Stand ability1</li>
-				</ul>
-				<ul className="standSummary">
-			    <li className="standName">StandName2</li>
-					<li>User2</li>
-					<li>Personality2</li>
-					<li>Appereance2</li>
-					<li>Stand ability2</li>
-				</ul>
+				<li className="standName">{stand.name}</li>
+				<li>User: {stand.user}</li>
+				<li>Personality: {stand.personality}</li>
+				<li>Stand appereance: {stand.appereance}</li>
+				<li>Stand ability: {stand.standAbility}</li>
+				<span className="deleteStand">x</span>
+			</ul>
+				))}
 			</div>
 		</div>
 	);
