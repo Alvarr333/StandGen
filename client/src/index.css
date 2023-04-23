@@ -57,6 +57,7 @@ h4{
   color: var(--color-text-secondary);
   font-weight: 400;
   margin-bottom: 2vh;
+  margin-top: 6vh;
 }
 
 ul{
@@ -73,12 +74,72 @@ ul li{
 }
 
 .standSummary{
+  
   transition: 0.5s;
   cursor: pointer;
   margin-bottom: 3vh;
 }
+
+.standSummary li:first-child {
+  text-align: center; /* Center the text */
+  list-style-type: none; /* Remove the bullet point */
+  font-size: 2.5vh;
+  font-style: italic;
+}
+
 .standSummary:hover{
   transform: scale(1.03);
   background-color: rgba(211, 234, 226, 0.7); 
 }
 
+.search-bar-container {
+  display: flex;
+  width: 90%;
+}
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  width: 40%;
+  align-items: center;
+  padding: 10px;
+  margin-right: 2vh;
+  background-color: var(--color-bg-secondary);
+  border: none;
+  border-radius: 1vw;
+}
+
+.search-bar-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background-color: var(--color-bg-secondary);
+}
+
+.search-button {
+  width: 40%;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg-secondary);
+  border: none;
+  border-radius: 1vw;
+  cursor: pointer;
+}
+
+.search-button-logo {
+  width: 3vh;
+  height: 3vh;
+  margin-right: 1vh;
+}
+
+.search-button-text{
+  font-family: 'Open Sans', sans-serif;
+  color: var(--color-text-secondary);
+}
