@@ -7,7 +7,7 @@
 
 :root {
   /* Primary colors */
-  --color-primary: #A55B4F;
+  --color-primary: #8ab09e;
   --color-secondary: #BD8C6E;
   --color-tertiary: #C6A27E;
   --color-accent: #708F9F;
@@ -66,11 +66,6 @@ ul{
   border-radius: 1vw;
   margin-bottom: 2.5vh;
   width: 85vw;
-  /* display: flex; 
-  flex-direction: column;
-  align-items: flex-start;
-  list-style-type: none; 
-  padding: 0; */
 }
 
 ul li{
@@ -98,11 +93,16 @@ ul li{
   background-color: rgba(211, 234, 226, 0.7); 
 }
 
+.standSummary:hover .deleteStand{
+  opacity: 1; 
+}
+
 .standSummary .deleteStand {
   color: var(--color-text);
   position: absolute;
-
-  right: 8vh; /* Add this to position it 5px from the right margin */
+  opacity: 0;
+  right: 1vh; /* Add this to position it 5px from the right margin */
+  bottom: 1vh;
   font-size: 1vh;
   width: 2vh;
   height: 2vh;
@@ -145,7 +145,7 @@ ul li{
   background-color: var(--color-bg-secondary);
 }
 
-.search-button {
+.button {
   width: 40%;
   padding: 10px;
   cursor: pointer;
@@ -157,19 +157,75 @@ ul li{
   cursor: pointer;
 }
 
-.search-button:hover{
-  transform: scale(1.03);
+.button:hover{
+  /* transform: scale(1.03); */
   transition: 0.25s;
   background-color: rgba(211, 234, 226, 0.7); 
 }
 
-.search-button-logo {
+.button-logo {
   width: 3vh;
   height: 3vh;
   margin-right: 1vh;
 }
 
-.search-button-text{
+.button-text{
   font-family: 'Open Sans', sans-serif;
   color: var(--color-text-secondary);
+}
+
+.popup{
+  position: fixed;
+  top: 50%;
+  left: 30%;
+  width: 40%;
+  height: 25vh;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vw;
+  padding: 10vh;
+  box-shadow: 0px 3px 24px var(--color-text);
+  z-index: 10;
+}
+
+.closePopup{
+  color: var(--color-text-secondary);
+  position: absolute;
+  right: 1vh; /* Add this to position it 5px from the right margin */
+  bottom: 1vh;
+  font-size: 1vh;
+  width: 2vh;
+  height: 2vh;
+  background-color: #aabfb9f1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.createStand{
+  border: none;
+  bottom: 1vh;
+  border-radius: 1vh;
+  width: 30vw;
+  background-color: #aabfb9f1;
+}
+
+.buttonCreate{
+  position: inherit;
+  bottom: 1vh;
+  left: 1vh;
+  width: 70px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg-secondary);
+  border: none;
+  border-radius: 1vw;
+  cursor: pointer;
 }

@@ -20,12 +20,35 @@ function App() {
 	};
 
 	const deleteStand = async(id) => {
-		const data = await fetch(API_URL + "/standgen/delete/" + id, {
-			method: "DELETE",
+		const confirmed = window.confirm("Are you sure you want to delete this stand?");
+		if (confirmed) {
+			const data = await fetch(API_URL + "/standgen/delete/" + id, {
+				method: "DELETE",
+			}).then((res) => res.json());
+
+			setStandList(standList.filter((stand) => stand._id !== id));
+		}
+	};
+
+	const createStand = async() => {
+		const data = await fetch(API_URL + "/standgen/new", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				user: newStand.user,
+				personality: newStand.personality,
+				stand: newStand.stand,
+				appereance: newStand.appereance,
+				standAbility: newStand.standAbility,
+			}),
 		}).then((res) => res.json());
 
-		setStandList(standList.filter((stand) => stand._id !== id));
-	};
+		setStandList([...standList, data]);
+		setPopupActive(false);
+		setNewStand("");
+	}
 
 	return (
 		<div className="App">
@@ -35,9 +58,54 @@ function App() {
     			<img src="lupa.png" alt="Search" class="search-bar-logo"></img>
     			<input type="text" placeholder="Search..." class="search-input"></input>
   			</div>
-  			<button class="search-button">
-    			<img src="lupa.png" alt="Generate Stand" class="search-button-logo"></img>
-					<span class="search-button-text">Generate Stand</span>
+  			<button class="button" onClick={() => 
+				setPopupActive(true)}>
+
+				{popupActive ? (
+					<div className="popup">
+						<div className="closePopup" onClick={(event) => {
+    						event.stopPropagation();
+    						setPopupActive(false);
+						}}>x</div>
+						<div className="popupContent">
+							<h3>Generate Stand</h3>
+							<input 
+								type="text" 
+								placeholder="User" 
+								class="createStand"
+								onChange={e => setNewStand({...newStand, user: e.target.value})}>
+							</input>
+							<input 
+								type="text" 
+								placeholder="Personality" 
+								class="createStand"
+								onChange={e => setNewStand({...newStand, personality: e.target.value})}>
+							</input>
+							<input 
+								type="text" 
+								placeholder="Stand" 
+								class="createStand"
+								onChange={e => setNewStand({...newStand, stand: e.target.value})}>
+							</input>
+							<input 
+								type="text" 
+								placeholder="Appereance" 
+								class="createStand"
+								onChange={e => setNewStand({...newStand, appereance: e.target.value})}>
+							</input>
+							<input 
+								type="text" 
+								placeholder="Stand Ability" 
+								class="createStand"
+								onChange={e => setNewStand({...newStand, standAbility: e.target.value})}>
+							</input>
+							<div className="buttonCreate" onClick={createStand}>Create!</div>
+						</div>
+					</div>
+				) : null}
+
+    			<img src="/client/src/lupa.png" alt="Generate Stand" class="search-button-logo"></img>
+					<span class="search-button-text"></span>
 				</button>
 			</div>
 			
@@ -50,7 +118,9 @@ function App() {
 				<li>Personality: {stand.personality}</li>
 				<li>Stand appereance: {stand.appereance}</li>
 				<li>Stand ability: {stand.standAbility}</li>
-				<span className="deleteStand">x</span>
+				<div className="deleteStand" onClick={() => 
+					deleteStand(stand._id)
+					}>x</div>
 			</ul>
 				))}
 			</div>
