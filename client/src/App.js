@@ -6,6 +6,7 @@ function App() {
 	const [standList, setStandList] = useState([]);
 	const [popupActive, setPopupActive] = useState(false);
 	const [newStand, setNewStand] = useState("");
+	const [searchTerm, setSearchTerm] = useState("");
 
 	useEffect(() => {
 		GetStands();
@@ -50,13 +51,17 @@ function App() {
 		setNewStand("");
 	}
 
+	const handleSearchInput = (event) => {
+		setSearchTerm(event.target.value.toLowerCase());
+	}
+
 	return (
 		<div className="App">
 			<h1>Stand Generator v1.0</h1>	
 			<div class="search-bar-container">
   			<div class="search-bar">
     			<img src="lupa.png" alt="Search" class="search-bar-logo"></img>
-    			<input type="text" placeholder="Search..." class="search-input"></input>
+    			<input type="text" placeholder="Search..." class="search-input" onChange={handleSearchInput}></input>
   			</div>
   			<button class="button" onClick={() => 
 				setPopupActive(true)}>
@@ -111,7 +116,8 @@ function App() {
 			
 			<h4>Stand list</h4>
 			<div className="standList">
-				{standList.map((stand) => (
+				{standList.filter(stand => stand.name.toLowerCase().indexOf(searchTerm) > -1)
+				.map((stand) => (
 				<ul className="standSummary">
 				<li className="standName">{stand.name}</li>
 				<li>User: {stand.user}</li>
