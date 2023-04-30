@@ -22,6 +22,30 @@ const StandGenSchema = new Schema({
         type: String,
         default: "No stand"
     },
+    power: {
+        type: Number,
+        default: 1
+    },
+    speed: {
+        type: Number,
+        default: 1
+    },
+    range: {
+        type: Number,
+        default: 1
+    },
+    durability: {
+        type: Number,
+        default: 1
+    },
+    precision: {
+        type: Number,
+        default: 1
+    },
+    potential: {
+        type: Number,
+        default: 1
+    },
     timeCreated: {
         type: Date,
         default: Date.now()

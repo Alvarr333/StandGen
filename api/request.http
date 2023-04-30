@@ -7,16 +7,31 @@ POST http://localhost:3001/standgen/new
 Content-Type: application/json
 
 {
-    "user": "Test User 3",
-    "name": "Test Name 3",
-    "personality": "Test Description 3",
-    "standAbility": "Test Ability 3"
+    "user": "Jotaro Kujo2",
+    "personality": "Misogonist2",
+    "name": "Star Platinum2",
+    "appereance": "purple aztec-like humanoid mmmmmmmmmmmmmmmmmmm2",
+    "standAbility": "oraoraoraoraora2"
     
 }
 
 ###
 
-DELETE http://localhost:3001/standgen/delete/64431d9a1b9fe9e569803137
+POST http://localhost:3001/standgen/new
+Content-Type: application/json
+
+{
+    "user": "User 1",
+    "name": "Stand 1",
+    "appereance": "appereance 1",
+    "personality": "personality 1",
+    "standAbility": "standAbility 1"
+    
+}
+
+###
+
+DELETE http://localhost:3001/standgen/delete/644c484ad9dcd0d225c33d76
 
 ###
 
@@ -29,16 +44,25 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3001/standgen/update/name/64431dbcb9007f4e42783980
+PUT http://localhost:3001/standgen/update/name/644c4473fbc528c25bd0e7b1
 Content-Type: application/json
 
 {
-    "name": "Star Platinum"
+    "name": "Cactus Sleeper"
 }
 
 ###
 
-PUT http://localhost:3001/standgen/update/personality/64431dbcb9007f4e42783980
+PUT http://localhost:3001/standgen/update/appereance/644c470b7b8e16a3fc4c22dd
+Content-Type: application/json
+
+{
+    "appereance": "Purple aztec-like humanoid mmmmmmmmmmmmmmmmmmm"
+}
+
+###
+
+PUT http://localhost:3001/standgen/update/personality/644c470b7b8e16a3fc4c22dd
 Content-Type: application/json
 
 {

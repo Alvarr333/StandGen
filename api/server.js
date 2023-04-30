@@ -18,14 +18,22 @@ const StandGen = require('./models/standgen');
 
 app.get("/standgen", async (req, res) => {
     const stand = await StandGen.find();
+    console.log(req.body);
     res.json(stand);
 });
+
+app.get("/standgen/:id", async (req, res) => {
+    const stand = await StandGen.findById(req.params.id);
+    res.json(stand);
+  });
+  
 
 app.post('/standgen/new', (req, res) => {
     const stand = new StandGen({
         user: req.body.user,
         personality: req.body.personality,
-        name: req.body.stand,
+        name: req.body.name,
+        appereance: req.body.appereance,
         standAbility: req.body.standAbility
     });
 
