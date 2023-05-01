@@ -269,3 +269,9 @@ ul li{
   font-weight: 400;
   margin-bottom: 2vh;
 }
+
+.chart-container {
+  width: 10%;
+  height: 10vh;
+  margin: 0 auto;
+}

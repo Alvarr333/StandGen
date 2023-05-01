@@ -24,26 +24,39 @@ const StandGenSchema = new Schema({
     },
     power: {
         type: Number,
+        min: 1,
+        max: 5,
         default: 1
     },
+    
     speed: {
         type: Number,
+        min: 1,
+        max: 5,
         default: 1
     },
     range: {
         type: Number,
+        min: 1,
+        max: 5,
         default: 1
     },
     durability: {
         type: Number,
+        min: 1,
+        max: 5,
         default: 1
     },
     precision: {
         type: Number,
+        min: 1,
+        max: 5,
         default: 1
     },
     potential: {
         type: Number,
+        min: 1,
+        max: 5,
         default: 1
     },
     timeCreated: {

@@ -44,11 +44,11 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3001/standgen/update/name/644c4473fbc528c25bd0e7b1
+PUT http://localhost:3001/standgen/update/appereance/644c4473fbc528c25bd0e7b1
 Content-Type: application/json
 
 {
-    "name": "Cactus Sleeper"
+    "appereance": "Cactus xd"
 }
 
 ###

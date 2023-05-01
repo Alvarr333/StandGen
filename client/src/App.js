@@ -61,7 +61,7 @@ function App() {
 			<Switch>
 				<Route exact path="/">
 					<div className="App">
-						<h1>Stand Generator v1.0</h1>	
+						<h1>Stand Generator v2.1</h1>	
 						<div className="search-bar-container">
 						<div className="search-bar">
 							<img src="lupa.png" alt="Search" className="search-bar-logo"></img>
@@ -81,31 +81,31 @@ function App() {
 										<input 
 											type="text" 
 											placeholder="User" 
-											class="createStand"
+											className="createStand"
 											onChange={e => setNewStand({...newStand, user: e.target.value})}>
 										</input>
 										<input 
 											type="text" 
 											placeholder="Personality" 
-											class="createStand"
+											className="createStand"
 											onChange={e => setNewStand({...newStand, personality: e.target.value})}>
 										</input>
 										<input 
 											type="text" 
 											placeholder="Stand" 
-											class="createStand"
+											className="createStand"
 											onChange={e => setNewStand({...newStand, stand: e.target.value})}>
 										</input>
 										<input 
 											type="text" 
 											placeholder="Appereance" 
-											class="createStand"
+											className="createStand"
 											onChange={e => setNewStand({...newStand, appereance: e.target.value})}>
 										</input>
 										<input 
 											type="text" 
 											placeholder="Stand Ability" 
-											class="createStand"
+											className="createStand"
 											onChange={e => setNewStand({...newStand, standAbility: e.target.value})}>
 										</input>
 										<div className="buttonCreate" onClick={createStand}>Create!</div>
@@ -113,8 +113,8 @@ function App() {
 								</div>
 							) : null}
 
-							<img src="/client/src/lupa.png" alt="Generate Stand" class="search-button-logo"></img>
-								<span class="search-button-text"></span>
+							<img src="/client/src/lupa.png" alt="Generate Stand" className="search-button-logo"></img>
+								<span className="search-button-text"></span>
 							</button>
 						</div>
 						
@@ -122,8 +122,7 @@ function App() {
 						<div className="standList">
 							{standList.filter(stand => stand.name.toLowerCase().indexOf(searchTerm) > -1)
 							.map((stand) => (
-							<div className="standSummary">
-
+							<div className="standSummary" key={stand._id}>
 								<Link to={`/stand/${stand._id}`}>
 									<li className="standName">{stand.name}</li>
 									<li>User: {stand.user}</li>
