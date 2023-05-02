@@ -3,6 +3,10 @@ GET http://localhost:3001/standgen
 
 ###
 
+GET http://localhost:3001/standgen/6450d42633c3ee1ef89faa1e
+
+###
+
 POST http://localhost:3001/standgen/new
 Content-Type: application/json
 
@@ -35,25 +39,30 @@ DELETE http://localhost:3001/standgen/delete/644c484ad9dcd0d225c33d76
 
 ###
 
-PUT http://localhost:3001/standgen/update/user/64431dbcb9007f4e42783980
+PUT http://localhost:3001/standgen/update/stats/6450d42633c3ee1ef89faa1e
 Content-Type: application/json
 
 {
-    "user": "Jotaro Kujo"
+    "power": 1,
+    "speed": 2,
+    "range": 3,
+    "durability": 4,
+    "precision": 5,
+    "potential": 5
 }
 
 ###
 
-PUT http://localhost:3001/standgen/update/appereance/644c4473fbc528c25bd0e7b1
+PUT http://localhost:3001/standgen/update/name/6450ceb233c3ee1ef89fa9f7
 Content-Type: application/json
 
 {
-    "appereance": "Cactus xd"
+    "name": "Rainbow in the Dark"
 }
 
 ###
 
-PUT http://localhost:3001/standgen/update/appereance/644c470b7b8e16a3fc4c22dd
+PUT http://localhost:3001/standgen/update/standAbility/644c470b7b8e16a3fc4c22dd
 Content-Type: application/json
 
 {

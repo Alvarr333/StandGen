@@ -34,7 +34,13 @@ app.post('/standgen/new', (req, res) => {
         personality: req.body.personality,
         name: req.body.name,
         appereance: req.body.appereance,
-        standAbility: req.body.standAbility
+        standAbility: req.body.standAbility,
+        power: req.body.power,
+        speed: req.body.speed,
+        range: req.body.range,
+        durability: req.body.durability,
+        precision: req.body.precision,
+        potential: req.body.potential
     });
 
     stand.save();
@@ -81,5 +87,19 @@ app.put('/standgen/update/standAbility/:id', async (req, res) => {
     stand.save();
     res.json(stand);
 });
+
+app.put('/standgen/update/stats/:id', async (req, res) => {
+    const stand = await StandGen.findById(req.params.id);
+    stand.power = req.body.power;
+    stand.speed = req.body.speed;
+    stand.range = req.body.range;
+    stand.durability = req.body.durability;
+    stand.precision = req.body.precision;
+    stand.potential = req.body.potential;
+    
+    stand.save();
+    res.json(stand);
+});
+
 
 app.listen(3001, () => console.log("Server running on port 3001"));

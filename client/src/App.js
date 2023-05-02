@@ -41,9 +41,15 @@ function App() {
 			body: JSON.stringify({
 				user: newStand.user,
 				personality: newStand.personality,
-				stand: newStand.stand,
+				name: newStand.name,
 				appereance: newStand.appereance,
 				standAbility: newStand.standAbility,
+				power: newStand.power,
+				speed: newStand.speed,
+				range: newStand.range,
+				durability: newStand.durability,
+				precision: newStand.precision,
+				potential: newStand.potential,
 			}),
 		}).then((res) => res.json());
 
@@ -92,9 +98,9 @@ function App() {
 										</input>
 										<input 
 											type="text" 
-											placeholder="Stand" 
+											placeholder="Stand Name" 
 											className="createStand"
-											onChange={e => setNewStand({...newStand, stand: e.target.value})}>
+											onChange={e => setNewStand({...newStand, name: e.target.value})}>
 										</input>
 										<input 
 											type="text" 
@@ -107,6 +113,36 @@ function App() {
 											placeholder="Stand Ability" 
 											className="createStand"
 											onChange={e => setNewStand({...newStand, standAbility: e.target.value})}>
+										</input>
+										<input type='text' 
+											placeholder='Power (1-5)' 
+											className='createStand' 
+											onChange={e => setNewStand({...newStand, power: e.target.value})}>
+										</input>
+										<input type='text'
+											placeholder='Speed (1-5)'
+											className='createStand'
+											onChange={e => setNewStand({...newStand, speed: e.target.value})}>
+										</input>
+										<input type='text'
+											placeholder='Range (1-5)'
+											className='createStand'
+											onChange={e => setNewStand({...newStand, range: e.target.value})}>
+										</input>
+										<input type='text'
+											placeholder='Durability (1-5)'
+											className='createStand'
+											onChange={e => setNewStand({...newStand, durability: e.target.value})}>
+										</input>
+										<input type='text'
+											placeholder='Precision (1-5)'
+											className='createStand'
+											onChange={e => setNewStand({...newStand, precision: e.target.value})}>
+										</input>
+										<input type='text'
+											placeholder='Potential (1-5)'
+											className='createStand'
+											onChange={e => setNewStand({...newStand, potential: e.target.value})}>
 										</input>
 										<div className="buttonCreate" onClick={createStand}>Create!</div>
 									</div>
