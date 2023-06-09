@@ -3,7 +3,7 @@ GET http://localhost:3001/standgen
 
 ###
 
-GET http://localhost:3001/standgen/6450d42633c3ee1ef89faa1e
+GET http://localhost:3001/standgen/644c4473fbc528c25bd0e7b1
 
 ###
 
@@ -94,4 +94,13 @@ Content-Type: application/json
 
 {
     "appereance": "purple aztec-like humanoid mmmmmmmmmmmmmmmmmmm"
+}
+
+###
+
+PUT http://localhost:3001/standgen/update/image/644c4473fbc528c25bd0e7b1
+Content-Type: application/json
+
+{
+    "image": "solar.jpg"
 }

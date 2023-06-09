@@ -59,6 +59,10 @@ const StandGenSchema = new Schema({
         max: 5,
         default: 1
     },
+    image: {
+        type: String,
+        default: "generic_stand.jpg"
+    },
     timeCreated: {
         type: Date,
         default: Date.now()

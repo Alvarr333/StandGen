@@ -67,7 +67,7 @@ function App() {
 			<Switch>
 				<Route exact path="/">
 					<div className="App">
-						<h1>Stand Generator v2.1</h1>	
+						<h1>Stand Generator v2.2</h1>	
 						<div className="search-bar-container">
 						<div className="search-bar">
 							<img src="lupa.png" alt="Search" className="search-bar-logo"></img>

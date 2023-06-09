@@ -66,11 +66,22 @@ const StandDescription = () => {
             <Link to="/">Back</Link>
         {stand ? (
             <div>
-                <h1>Stand Description</h1>
+                <h1>{stand.name}</h1>
+                <img
+                    src="/misc/standImages/rainbow.jpg"
+                    alt="Rainbow"
+                    style={{
+                    width: '30vw',
+                    height: '30vw',
+                    display: 'block',
+                    margin: '0 auto',
+                    objectFit: 'cover',
+                    
+                }}/>
                 <h4>User: </h4> <p>{stand.user}</p>
                 <h4>Personality: </h4> <p>{stand.personality}</p>
-                <h4>Name: </h4><p>{stand.name}</p>
-                <h4>Appereance: </h4><p>{stand.appereance}</p>
+                <h4>Stand Name: </h4><p>{stand.name}</p>
+                <h4>Stand Appereance: </h4><p>{stand.appereance}</p>
                 <h4>Stand Ability: </h4><p>{stand.standAbility}</p>
 
                 <h4>Stats </h4>
@@ -121,12 +132,12 @@ const StandDescription = () => {
 							) : null}
                             </button>
 
-                {/* <p>Power: {stand.power}</p>
+                <p>Power: {stand.power}</p>
                 <p>Speed: {stand.speed}</p>
                 <p>Range: {stand.range}</p>
                 <p>Durability: {stand.durability}</p>
                 <p>Precision: {stand.precision}</p>
-                <p>Potential: {stand.potential}</p> */}
+                <p>Potential: {stand.potential}</p>
 
                 <div> 
                     <RadarChart stand={stand} />

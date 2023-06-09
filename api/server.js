@@ -6,6 +6,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.use(express.static('public'));
 
 mongoose.connect("mongodb://127.0.0.1:27017/mern-standgen", {
     useNewUrlParser: true,
@@ -56,6 +57,13 @@ app.delete('/standgen/delete/:id', async (req, res) => {
 app.put('/standgen/update/user/:id', async (req, res) => {
     const stand = await StandGen.findById(req.params.id);
     stand.user = req.body.user;
+    stand.save();
+    res.json(stand);
+});
+
+app.put('/standgen/update/image/:id', async (req, res) => {
+    const stand = await StandGen.findById(req.params.id);
+    stand.image = req.body.image;
     stand.save();
     res.json(stand);
 });
